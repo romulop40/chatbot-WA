@@ -1,0 +1,27 @@
+# docker-compose.yml
+#version: "3.8"
+#services:
+#  chatbot:
+#    build: .
+#    environment:
+#      - LLM_API_KEY=${LLM_API_KEY}
+#      - PINECONE_API_KEY=${PINECONE_API_KEY}
+#    ports:
+#      - "8501:8501"
+#  pinecone:
+#    image: pinecone/pinecone-server
+#    ports:
+#      - "8000:8000"
+
+# Arquivo yml mais atualizado para o projeto, codigo acima foi para teste
+version: '3'
+services:
+  chatbot:
+    build: .
+    environment:
+      - LLM_API_KEY=${LLM_API_KEY}
+      - PINECONE_API_KEY=${PINECONE_API_KEY}
+      - PINECONE_ENVIRONMENT=${PINECONE_ENVIRONMENT}
+    ports:
+      - "8501:8501"  # Mapeie a porta 8501 do contêiner para a porta 8501 do host
+
