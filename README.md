@@ -1,13 +1,21 @@
 Este projeto é um chatbot desenvolvido em Python, com integração ao Google Dialogflow ou OpenAI (ambas as opções estão disponíveis no arquivo chatbot.py). Ele utiliza um banco de dados vetorial (VectorDB) para armazenamento de interações e é hospedado via Docker.
 
-Estrutura do Projeto
+Estrutura do Projeto:
+
 chatbot.py: Classe principal do chatbot, integrando o Google Dialogflow e oferecendo memória de conversação.
+
 vector_db.py: Gerencia o banco de dados vetorial, permitindo o armazenamento e a consulta das interações.
+
 app.py: Script de inicialização do chatbot, oferecendo uma interface pelo Streamlit.
+
 docker-compose.yml: Configuração dos serviços e volumes Docker para o chatbot e outros componentes.
+
 Dockerfile: Define a imagem Docker para o ambiente Python e suas dependências.
+
 requirements.txt: Lista de dependências Python necessárias para o projeto.
+
 .env: Arquivo para armazenar variáveis de ambiente, como credenciais e configurações sensíveis.
+
 Configuração e Instalação
 Antes de começar, instale o Git Bash (caso esteja no Windows) e navegue até a pasta do projeto. Siga os passos abaixo para configurar e rodar o chatbot:
 
