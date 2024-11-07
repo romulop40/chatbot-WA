@@ -32,8 +32,11 @@ pip install -r requirements.txt
 pip show langchain
 
 # Atualize as bibliotecas, se necessário
+
 pip install --upgrade openai
+
 pip install google-cloud-dialogflow
+
 pip install --upgrade langchain
 
 2. Build e Execução do Projeto com Docker
