@@ -1,42 +1,44 @@
-Este projeto é um Chatbot desenvolvido em Python com integração ao Google Dialogflow ou OpenAI(OPÇÂO),tem as duas opções escrita no arquivo chatbot.py, 
-utilizando um banco de dados vetorial (VectorDB) e hospedado via Docker. Abaixo estão as instruções de configuração e um resumo dos arquivos e bibliotecas envolvidos.
+Este projeto é um chatbot desenvolvido em Python, com integração ao Google Dialogflow ou OpenAI (ambas as opções estão disponíveis no arquivo chatbot.py). Ele utiliza um banco de dados vetorial (VectorDB) para armazenamento de interações e é hospedado via Docker.
 
-Estrutura do Projeto:
+Estrutura do Projeto
+chatbot.py: Classe principal do chatbot, integrando o Google Dialogflow e oferecendo memória de conversação.
+vector_db.py: Gerencia o banco de dados vetorial, permitindo o armazenamento e a consulta das interações.
+app.py: Script de inicialização do chatbot, oferecendo uma interface pelo Streamlit.
+docker-compose.yml: Configuração dos serviços e volumes Docker para o chatbot e outros componentes.
+Dockerfile: Define a imagem Docker para o ambiente Python e suas dependências.
+requirements.txt: Lista de dependências Python necessárias para o projeto.
+.env: Arquivo para armazenar variáveis de ambiente, como credenciais e configurações sensíveis.
+Configuração e Instalação
+Antes de começar, instale o Git Bash (caso esteja no Windows) e navegue até a pasta do projeto. Siga os passos abaixo para configurar e rodar o chatbot:
 
-->chatbot.py: Classe principal do chatbot, que integra o Google Dialogflow e utiliza memória de conversação.
+1. Instalar Bibliotecas Necessárias
+Instale as dependências do projeto com os seguintes comandos:
 
-->vector_db.py: Script que gerencia o banco de dados vetorial para armazenamento e consulta das interações.
+# Construa os serviços com as variáveis de ambiente
+docker-compose --env-file .env build
 
-->app.py: Script de inicialização do chatbot com interface pelo Streamlit.
+# Instale as dependências Python
+pip install -r requirements.txt
 
-->docker-compose.yml: Configuração de serviços e volumes Docker para o chatbot e outros componentes.
+# Verifique a instalação do Langchain
+pip show langchain
 
-->Dockerfile: Define a imagem Docker para o ambiente Python e as dependências.
+# Atualize as bibliotecas, se necessário
+pip install --upgrade openai
+pip install google-cloud-dialogflow
+pip install --upgrade langchain
 
-->requirements.txt: Lista de dependências Python necessárias para o projeto.
+2. Build e Execução do Projeto com Docker
+Certifique-se de que o Docker Desktop está instalado (testado na versão 4.35.1). Em seguida, construa e inicie o contêiner:
 
-->.env: Arquivo para armazenar variáveis de ambiente (como credenciais e configurações sensíveis).
+docker-compose up --build
 
-Instalar o gitbash e abrir o caminho dentro da pasta do projeto e seguir os seguinte passos para rodar o chatbot:
+3. Acessando a Interface
+Após iniciar o contêiner, acesse a interface do chatbot no navegador usando o endereço:
 
-#Bibliotecas para ser instalados:
+http://localhost:8501
 
-==>#docker-compose --env-file .env build
-==>#pip install -r requirements.txt
-==>#pip show langchain
-==>#pip install --upgrade openai
-==>#pip install google-cloud-dialogflow
-==>#pip install --upgrade langchain
-==>#pip install google-cloud-dialogflow
+4. Verificação de Logs
+Em caso de problemas, consulte os logs para diagnóstico:
 
-Comando para Build do projeto, construir e iniciar o contêiner no Docker, versão usada Docker Desktop 4.35.1 (173168):
-
-==>#docker-compose up --build
-
-*Porta de acessar no navegador o projeto:
-
-Localhost:8501
-
-*Caso tenha problema, usar comando para ver os logs:
- 
-==>#docker-compose logs
+docker-compose logs
