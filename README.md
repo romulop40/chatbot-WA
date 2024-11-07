@@ -4,11 +4,17 @@ utilizando um banco de dados vetorial (VectorDB) e hospedado via Docker. Abaixo 
 Estrutura do Projeto:
 
 ->chatbot.py: Classe principal do chatbot, que integra o Google Dialogflow e utiliza memória de conversação.
+
 ->vector_db.py: Script que gerencia o banco de dados vetorial para armazenamento e consulta das interações.
+
 ->app.py: Script de inicialização do chatbot com interface pelo Streamlit.
+
 ->docker-compose.yml: Configuração de serviços e volumes Docker para o chatbot e outros componentes.
+
 ->Dockerfile: Define a imagem Docker para o ambiente Python e as dependências.
+
 ->requirements.txt: Lista de dependências Python necessárias para o projeto.
+
 ->.env: Arquivo para armazenar variáveis de ambiente (como credenciais e configurações sensíveis).
 
 Instalar o gitbash e abrir o caminho dentro da pasta do projeto e seguir os seguinte passos para rodar o chatbot:
